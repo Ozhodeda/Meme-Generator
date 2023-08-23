@@ -1,22 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
     <title>Meme-Generator</title>
 </head>
-<body>
 
-    <header class="main-header">
+<body onload="onInit();onInitGallery()">
+
+    <header class="main-header flex space-between align-center">
         <div class="logo">Meme-Generator</div>
         <nav class="main-nav-container">
-            <ul class="main-nav">
-                <li><a href="#">Gallery</a></li>
+            <ul class="main-nav clean-list">
+                <li><button class="gallery-btn" onclick="onClickGallery()">Gallery</button></li>
                 <li><a href="#">About</a></li>
             </ul>
         </nav>
-        <button class="btn-toggle" onclick="toggleMenu()">🧱</button>
+        <button class="btn-toggle" onclick="toggleMenu()">☰</button>
     </header>
+    <section class="main-gallery flex ">
+        <h3>My-Gallery</h3>
+    </section>
 
+    <section class="canvas-container">
+        <h3>My-Editor</h3>
+        <canvas width="450" height="450"></canvas>
+    </section>
+
+    <section class="tools-container">
+        <h3> My-Tools</h3>
+
+        <input type="text" placeholder="write something" id="txt-input" oninput="onChangeText(this.value)">
+
+        <div class="line-container">
+            <button onclick="onAddLine()" title = 'plus line'>+</button>
+            <button onclick="onDeleteLine()" title = 'Delate line'>-</button>
+            <button onclick="onSwitchLine(-1)" title = 'up line'>⬆</button>
+            <button onclick="onSwitchLine(1)" title = 'down line'>⬇</button>
+        </div>
+
+        <div class="font-container">
+          <button onclick="onChangeSize(5)" title = 'plus size'>A+</button>
+          <button onclick="onChangeSize(-5)" title = 'minos line'>A-</button>
+          <button onclick="onAlignText('center')" title = 'align txt center'>⏺️</button>
+          <button onclick="onAlignText('left')" title = 'align txt left'>⬅️</button>
+          <button onclick="onAlignText('right')" title = 'align txt right'>➡️</button>
+          <select id="font-family" onchange="onFontChange(this.value)">
+            <option value="impact">Impact</option>
+            <option value="Segoe UI">Segoe UI</option>
+            <option value="verdana">Verdana</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="times new roman">Times New Roman</option>
+            <option value="comic sans ms">Comic Sans MS</option>
+        </select>
+        </div>
+
+        <input oninput="onFontColor(this.value)" type="color" id="fontColor" title = 'font color'/>
+        <input oninput="onStrokeColor(this.value)" type="color" id="strokeColor" title = 'font stroke color' />
+        
+        <h4><a href="#" onclick="onDownloadCanvas(this)">Download</a></h4>
+        <button class="btn" onclick="onUploadImg()"> Share on Facebook</button>
+
+
+    </section>
+
+
+
+
+    <script src="js/services/utils.servise.js"></script>
+    <script src="js/services/meme.servise.js"></script>
+    <script src="js/gallery.controller.js"></script>
+    <script src="js/meme.controller.js"></script>
+    <script src="js/sharing-on-facebook.js"></script>
 </body>
+
 </html>

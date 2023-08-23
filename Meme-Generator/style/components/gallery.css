@@ -1,0 +1,26 @@
+.main-gallery{
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: calc(15.15% - 10px);
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    padding: 2px;
+    cursor: pointer;
+    height: auto;
+    display: block;
+  }
+
+  .gallery-item:hover{
+    transition: 0.6s;
+    scale: 1.3;
+  } 
+

@@ -1,0 +1,22 @@
+/* * {
+    box-sizing: border-box;
+} */
+
+body{
+    margin: 0;
+    text-align: center;
+}
+
+canvas {
+    
+    margin-bottom: 30px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.canvas-container{
+    width: 80vw;
+    margin: 10px auto;
+    background-color: lightgray;
+    border: 1px solid black;
+}
